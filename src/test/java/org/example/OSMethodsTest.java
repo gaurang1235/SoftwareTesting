@@ -1,12 +1,11 @@
 package org.example;
 
+import org.example.Service.OSMethods;
 import org.junit.Test;
-import org.junit.jupiter.api.condition.OS;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -387,11 +386,11 @@ public class OSMethodsTest {
 
     @Test
     public void testFirstComeFirstServeWithValidProcesses() {
-        List<Process> processes = Arrays.asList(
-                new Process(1, 0, 3),
-                new Process(2, 2, 5),
-                new Process(3, 4, 2),
-                new Process(4, 6, 7)
+        List<org.example.Models.Process> processes = Arrays.asList(
+                new org.example.Models.Process(1, 0, 3),
+                new org.example.Models.Process(2, 2, 5),
+                new org.example.Models.Process(3, 4, 2),
+                new org.example.Models.Process(4, 6, 7)
         );
 
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();

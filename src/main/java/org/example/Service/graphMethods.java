@@ -1,9 +1,13 @@
-package org.example;
+package org.example.Service;
 
+
+import org.example.Models.Edge;
+import org.example.Models.Node;
+import org.example.Models.Pair;
 
 import java.util.*;
 
-class Solution1 {
+public class graphMethods {
     // Function to return list containing vertices in Topological order.
     private static void dfs(int node, int vis[], Stack<Integer> st,
                             ArrayList<ArrayList<Integer>> adj) {
@@ -16,7 +20,7 @@ class Solution1 {
     }
 
     // Function to return list containing vertices in Topological order.
-    static int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj) {
+    public static int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj) {
         int vis[] = new int[V];
         Stack<Integer> st = new Stack<Integer>();
         for (int i = 0; i < V; i++) {
@@ -35,7 +39,7 @@ class Solution1 {
     }
 
     // Function to return list containing vertices in Topological order.
-    static int[] kahnSort(int V, ArrayList<ArrayList<Integer>> adj) {
+    public static int[] kahnSort(int V, ArrayList<ArrayList<Integer>> adj) {
         int indegree[] = new int[V];
         for (int i = 0; i < V; i++) {
             for (int it : adj.get(i)) {
@@ -267,7 +271,7 @@ class Solution1 {
 
 
 
-    static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S)
+    public static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S)
     {
 
         if(V==0) return new int[]{-1};
@@ -320,8 +324,8 @@ class Solution1 {
 
 
 
-    static int[] bellman_ford(int V,
-                              ArrayList<ArrayList<Integer>> edges, int S) {
+    public static int[] bellman_ford(int V,
+                                     ArrayList<ArrayList<Integer>> edges, int S) {
         int[] dist = new int[V];
         for (int i = 0; i < V; i++) dist[i] = (int)(1e8);
         dist[S] = 0;

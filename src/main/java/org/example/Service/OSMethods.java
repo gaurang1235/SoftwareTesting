@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Service;
 
 import java.util.*;
 
@@ -26,7 +26,7 @@ public class OSMethods {
     }
 
     //Function to calculate average time
-    static void findavgTime(int processes[], int n, int bt[]) {
+    public static void findavgTime(int processes[], int n, int bt[]) {
         if(processes.length==0) return ;
         int wt[] = new int[n], tat[] = new int[n];
         int total_wt = 0, total_tat = 0;
@@ -74,7 +74,7 @@ public class OSMethods {
     }
 
     // create checkSafeSystem() method to determine whether the system is in safe state or not
-    static boolean checkSafeSystem(int processes[], int availableArray[], int maxArray[][], int allocationArray[][], int totalProcess, int totalResources)
+    public static boolean checkSafeSystem(int processes[], int availableArray[], int maxArray[][], int allocationArray[][], int totalProcess, int totalResources)
     {
         int [][]needArray = new int[totalProcess][totalResources];
 
@@ -147,23 +147,23 @@ public class OSMethods {
 
 
     public static void fcfs(int[] at, int[] bt) {
-        List<Process> processes = new ArrayList<>();
+        List<org.example.Models.Process> processes = new ArrayList<>();
         for (int i = 0; i < at.length; i++) {
 
             int arrivalTime = at[i];
 
             int burstTime = bt[i];
 
-            processes.add(new Process(i, arrivalTime, burstTime));
+            processes.add(new org.example.Models.Process(i, arrivalTime, burstTime));
         }
 
         firstComeFirstServe(processes);
     }
 
-    public static void firstComeFirstServe(List<Process> processes) {
+    public static void firstComeFirstServe(List<org.example.Models.Process> processes) {
         int currentTime = 0;
 
-        for (Process process : processes) {
+        for (org.example.Models.Process process : processes) {
             if (process.arrivalTime > currentTime) {
                 currentTime = process.arrivalTime;
             }

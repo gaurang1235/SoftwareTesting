@@ -1,8 +1,8 @@
-package org.example;
+package org.example.Models;
 
-class Node {
-    int first;
-    int second;
+public class Node {
+    public int first;
+    public int second;
     public Node(int first, int second) {
         this.first = first;
         this.second = second;

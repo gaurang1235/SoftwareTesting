@@ -1,11 +1,11 @@
-package org.example;
+package org.example.Service;
 
 import java.util.Arrays;
 
 public class SortingMethods {
 
     // Merge Sort
-    int[] mergeSort(int myarr[])
+    public int[] mergeSort(int myarr[])
     {
         int len = myarr.length;
         int arr[] = new int[len];
@@ -70,7 +70,7 @@ public class SortingMethods {
 
 
     // Selection Sort
-    int[] selectionSort(int myarr[])
+    public int[] selectionSort(int myarr[])
     {
         int len = myarr.length;
         int arr[] = new int[len];
@@ -100,7 +100,7 @@ public class SortingMethods {
 
 
     // Quick Sort starts
-    int[] quickSort(int myarr[])
+    public int[] quickSort(int myarr[])
     {
         int len = myarr.length;
         int arr[] = new int[len];
@@ -150,7 +150,7 @@ public class SortingMethods {
 
 
     // BUBBLE SORTING OF ARRAY
-    int[] bubbleSort(int myarr[])
+    public int[] bubbleSort(int myarr[])
     {
         int len = myarr.length, tmp;
         boolean flag;
@@ -181,7 +181,7 @@ public class SortingMethods {
 
 
     // INSERTION SORTING OF ARRAY
-    int[] insertionSort(int myarr[])
+    public int[] insertionSort(int myarr[])
     {
         int len = myarr.length, tmp, j;
         int arr[] = new int[len];
@@ -211,7 +211,7 @@ public class SortingMethods {
 
 
     //Counting Sort Starts
-    int[] countSort(int[] myarr)
+    public int[] countSort(int[] myarr)
     {
         int len = myarr.length;
         int arr[] = new int[len];
@@ -251,7 +251,7 @@ public class SortingMethods {
 
 
     //Odd-Even Sort Starts
-    int[] oddEvenSort(int myarr[])
+    public int[] oddEvenSort(int myarr[])
     {
         int len = myarr.length;
         int arr[] = new int[len];
@@ -297,7 +297,7 @@ public class SortingMethods {
     //Bucket Sort Starts
 
     //get Maximum of Elements of an Array
-    static int getMax(int arr[])
+    public static int getMax(int arr[])
     {
         int n = arr.length;
         int res = arr[0];
@@ -311,7 +311,7 @@ public class SortingMethods {
         return res;
     }
 
-    int[] bucketSort(int[] sequence)
+    public int[] bucketSort(int[] sequence)
     {
         int maxValue = getMax(sequence);
         // Bucket Sort
@@ -332,7 +332,7 @@ public class SortingMethods {
 
 
     //Comb Sort Starts
-    int[] combSort(int[] myarr) {
+    public int[] combSort(int[] myarr) {
         int n = myarr.length;
         int arr[] = new int[n];
         for(int i = 0; i < n; i++)

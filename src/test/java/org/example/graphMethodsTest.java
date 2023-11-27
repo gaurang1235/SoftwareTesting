@@ -1,6 +1,8 @@
 package org.example;
 
 
+import org.example.Models.Edge;
+import org.example.Service.graphMethods;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -9,11 +11,11 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class Solution1Test {
+public class graphMethodsTest {
 
     @Test
     public void testTopoSort() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -32,7 +34,7 @@ public class Solution1Test {
 
     @Test
     public void testKahnSort() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -51,7 +53,7 @@ public class Solution1Test {
 
     @Test
     public void testBFSOfGraph() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -70,7 +72,7 @@ public class Solution1Test {
 
     @Test
     public void testDFSOfGraph() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -89,7 +91,7 @@ public class Solution1Test {
 
     @Test
     public void testIsCycle() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 4;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -104,7 +106,7 @@ public class Solution1Test {
 
     @Test
     public void testIsCyclic() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 4;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -120,7 +122,7 @@ public class Solution1Test {
 
     @Test
     public void testIsBipartite() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 4;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -135,7 +137,7 @@ public class Solution1Test {
 
     @Test
     public void testDijkstra() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 5;
         ArrayList<ArrayList<ArrayList<Integer>>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -154,7 +156,7 @@ public class Solution1Test {
 
     @Test
     public void testBellmanFord() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 5;
         ArrayList<ArrayList<Integer>> edges = new ArrayList<>();
         edges.add(new ArrayList<>(Arrays.asList(0, 1, 2)));
@@ -170,7 +172,7 @@ public class Solution1Test {
 
     @Test
     public void testTopoSortWithDisconnectedGraph() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -192,7 +194,7 @@ public class Solution1Test {
 
     @Test
     public void testIsCyclicWithDisconnectedGraph() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -211,7 +213,7 @@ public class Solution1Test {
 
     @Test
     public void testTopoSortWithEmptyGraph() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 0;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
@@ -222,7 +224,7 @@ public class Solution1Test {
 
     @Test
     public void testKahnSortWithEmptyGraph() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 0;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
@@ -233,7 +235,7 @@ public class Solution1Test {
 
     @Test
     public void testBFSOfGraphWithEmptyGraph() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 0;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
@@ -244,7 +246,7 @@ public class Solution1Test {
 
     @Test
     public void testDFSOfGraphWithEmptyGraph() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 0;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
@@ -255,7 +257,7 @@ public class Solution1Test {
 
     @Test
     public void testIsCycleWithDisconnectedGraph() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -274,7 +276,7 @@ public class Solution1Test {
 
     @Test
     public void testIsCyclicWithDisconnectedGraphAndIsolatedNodes() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -294,7 +296,7 @@ public class Solution1Test {
 
     @Test
     public void testIsBipartiteWithDisconnectedGraph() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 5;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -313,7 +315,7 @@ public class Solution1Test {
 
     @Test
     public void testIsCycleWithSingleNode() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 1;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -325,7 +327,7 @@ public class Solution1Test {
 
     @Test
     public void testIsCyclicWithSingleNode() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 1;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -337,7 +339,7 @@ public class Solution1Test {
 
     @Test
     public void testIsBipartiteWithSingleNode() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 1;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -349,7 +351,7 @@ public class Solution1Test {
 
     @Test
     public void testDijkstraWithSingleNode() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 1;
         ArrayList<ArrayList<ArrayList<Integer>>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -363,7 +365,7 @@ public class Solution1Test {
 
     @Test
     public void testBellmanFordWithSingleNode() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 1;
         ArrayList<ArrayList<Integer>> edges = new ArrayList<>();
 
@@ -375,7 +377,7 @@ public class Solution1Test {
 
     @Test
     public void testIsBipartiteWithDisconnectedGraphAndCycle() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 6;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
         for (int i = 0; i < V; i++) {
@@ -412,7 +414,7 @@ public class Solution1Test {
 
     @Test
     public void testBellmanFordWithGraphContainingNegativeCycle() {
-        Solution1 solution = new Solution1();
+        graphMethods solution = new graphMethods();
         int V = 4;
         ArrayList<ArrayList<Integer>> edges = new ArrayList<>();
         edges.add(new ArrayList<>(Arrays.asList(0, 1, 2)));
@@ -435,7 +437,7 @@ public class Solution1Test {
         edges.add(new Edge(2, 3, 1));
         edges.add(new Edge(3, 0, 3));
 
-        Solution1 kruskalMST = new Solution1();
+        graphMethods kruskalMST = new graphMethods();
         List<Edge> result = kruskalMST.kruskalMST(edges, 4);
 
         // Verify that the result is a valid MST
@@ -448,7 +450,7 @@ public class Solution1Test {
     public void testKruskalMSTWithEmptyEdges() {
         List<Edge> edges = new ArrayList<>();
 
-        Solution1 kruskalMST = new Solution1();
+        graphMethods kruskalMST = new graphMethods();
         List<Edge> result = kruskalMST.kruskalMST(edges, 0);
 
         // The result should be an empty list since there are no edges
@@ -459,7 +461,7 @@ public class Solution1Test {
     public void testFindWithValidInput() {
         int[] parent = {0, 1, 2, 3};
 
-        Solution1 kruskalMST = new Solution1();
+        graphMethods kruskalMST = new graphMethods();
         int result = kruskalMST.find(parent, 2);
 
         // The result should be the root of the set, which is 2 in this case
@@ -470,7 +472,7 @@ public class Solution1Test {
     public void testUnionWithValidInput() {
         int[] parent = {0, 1, 2, 3};
 
-        Solution1 kruskalMST = new Solution1();
+        graphMethods kruskalMST = new graphMethods();
         kruskalMST.union(parent, 1, 3);
 
         // After union, the parent of 1 should be 3
@@ -479,7 +481,7 @@ public class Solution1Test {
 
     @Test
     public void testHamiltonianCycle() {
-        Solution1 hamiltonianCycle = new Solution1();
+        graphMethods hamiltonianCycle = new graphMethods();
         int[] ans1 = { 0, 1, 2, 4, 3, 0 };
         int[][] arr1 = {
                 { 0, 1, 0, 1, 0 },
