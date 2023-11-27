@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class SortingMethods {
 
     // Merge Sort
@@ -204,4 +206,183 @@ public class SortingMethods {
         return arr;
     }
     // INSERTION SORTING OF ARRAY
+
+
+
+
+    //Counting Sort Starts
+    int[] countSort(int[] myarr)
+    {
+        int len = myarr.length;
+        int arr[] = new int[len];
+        for(int i = 0; i < len; i++)
+        {
+            arr[i] = myarr[i];
+        }
+        int max = Arrays.stream(arr).max().getAsInt();
+        int min = Arrays.stream(arr).min().getAsInt();
+        int range = max - min + 1;
+        int count[] = new int[range];
+        int output[] = new int[len];
+        for (int i = 0; i < arr.length; i++)
+        {
+            count[arr[i] - min]++;
+        }
+
+        for (int i = 1; i < count.length; i++)
+        {
+            count[i] += count[i - 1];
+        }
+
+        for (int i = arr.length - 1; i >= 0; i--)
+        {
+            output[count[arr[i] - min] - 1] = arr[i];
+            count[arr[i] - min]--;
+        }
+
+        for (int i = 0; i < arr.length; i++)
+        {
+            arr[i] = output[i];
+        }
+
+        return arr;
+    }
+    //Counting Sort Ends
+
+
+    //Odd-Even Sort Starts
+    int[] oddEvenSort(int myarr[])
+    {
+        int len = myarr.length;
+        int arr[] = new int[len];
+        for(int i = 0; i < len; i++)
+        {
+            arr[i] = myarr[i];
+        }
+        boolean sorted = false;
+        while (!sorted)
+        {
+            sorted = true;
+            for (int i = 1; i < arr.length - 1; i += 2)
+            {
+                if (arr[ i ] > arr[ i + 1 ])
+                {
+                    swap( arr , i , i + 1 );
+                    sorted = false;
+                }
+            }
+
+            for (int i = 0; i < arr.length - 1; i += 2)
+            {
+                if (arr[ i ] > arr[ i + 1 ])
+                {
+                    swap( arr , i , i + 1 );
+                    sorted = false;
+                }
+            }
+        }
+        return arr;
+    }
+
+    private static void swap(int[] array, int i, int j)
+    {
+        int temp;
+        temp = array[ i ];
+        array[ i ] = array[ j ];
+        array[ j ] = temp;
+    }
+    //Odd Even Sort Ends
+
+
+    //Bucket Sort Starts
+
+    //get Maximum of Elements of an Array
+    static int getMax(int arr[])
+    {
+        int n = arr.length;
+        int res = arr[0];
+        for (int i = 1; i < n; i++)
+        {
+            if(res<arr[i])
+            {
+                res=arr[i];
+            }
+        }
+        return res;
+    }
+
+    int[] bucketSort(int[] sequence)
+    {
+        int maxValue = getMax(sequence);
+        // Bucket Sort
+        int[] Bucket = new int[maxValue + 1];
+        int[] sortedSequence = new int[sequence.length];
+
+        for (int i = 0; i < sequence.length; i++)
+            Bucket[sequence[i]]++;
+
+        int outPos = 0;
+        for (int i = 0; i < Bucket.length; i++)
+            for (int j = 0; j < Bucket[i]; j++)
+                sortedSequence[outPos++] = i;
+
+        return sortedSequence;
+    }
+    //Bucket Sort ends
+
+
+    //Comb Sort Starts
+    int[] combSort(int[] myarr) {
+        int n = myarr.length;
+        int arr[] = new int[n];
+        for(int i = 0; i < n; i++)
+        {
+            arr[i] = myarr[i];
+        }
+        // initialize gap
+        int gap = n;
+
+        // Initialize swapped as true to make sure that
+        // loop runs
+        boolean swapped = true;
+
+        // Keep running while gap is more than 1 and last
+        // iteration caused a swap
+        while (gap != 1 || swapped == true)
+        {
+            // Find next gap
+            gap = getNextGap(gap);
+
+            // Initialize swapped as false so that we can
+            // check if swap happened or not
+            swapped = false;
+
+            // Compare all elements with current gap
+            for (int i=0; i<n-gap; i++)
+            {
+                if (arr[i] > arr[i+gap])
+                {
+                    // Swap arr[i] and arr[i+gap]
+                    int temp = arr[i];
+                    arr[i] = arr[i+gap];
+                    arr[i+gap] = temp;
+
+                    // Set swapped
+                    swapped = true;
+                }
+            }
+        }
+        return arr;
+    }
+
+    // To find gap between elements
+    static int getNextGap(int gap)
+    {
+        // Shrink gap by Shrink factor
+        gap = (gap*10)/13;
+        if (gap < 1)
+            return 1;
+        return gap;
+    }
+    //Comb Sort Ends
 }

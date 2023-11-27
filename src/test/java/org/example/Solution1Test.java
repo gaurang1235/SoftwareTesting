@@ -476,4 +476,28 @@ public class Solution1Test {
         // After union, the parent of 1 should be 3
         assertEquals(3, parent[1]);
     }
+
+    @Test
+    public void testHamiltonianCycle() {
+        Solution1 hamiltonianCycle = new Solution1();
+        int[] ans1 = { 0, 1, 2, 4, 3, 0 };
+        int[][] arr1 = {
+                { 0, 1, 0, 1, 0 },
+                { 1, 0, 1, 1, 1 },
+                { 0, 1, 0, 0, 1 },
+                { 1, 1, 0, 0, 1 },
+                { 0, 1, 1, 1, 0 },
+        };
+        assertArrayEquals(ans1, hamiltonianCycle.findHamiltonianCycle(arr1));
+
+        int[] ans2 = { -1, -1, -1, -1, -1, -1 };
+        int[][] arr2 = {
+                { 0, 1, 0, 1, 0 },
+                { 1, 0, 1, 1, 1 },
+                { 0, 1, 0, 0, 1 },
+                { 1, 1, 0, 0, 0 },
+                { 0, 1, 1, 0, 0 },
+        };
+        assertArrayEquals(ans2, hamiltonianCycle.findHamiltonianCycle(arr2));
+    }
 }
