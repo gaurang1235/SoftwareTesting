@@ -184,7 +184,6 @@ public class graphMethodsTest {
         adj.get(2).add(3);
         adj.get(3).add(4);
 
-        // Adding an isolated node
         adj.add(new ArrayList<>());
 
         int[] result = solution.topoSort(V + 1, adj);
@@ -205,7 +204,6 @@ public class graphMethodsTest {
         adj.get(2).add(3);
         adj.get(3).add(0);
 
-        // Adding an isolated node
         adj.add(new ArrayList<>());
 
         assertTrue(solution.isCyclic(V + 1, adj));
@@ -268,7 +266,6 @@ public class graphMethodsTest {
         adj.get(2).add(3);
         adj.get(3).add(0);
 
-        // Adding an isolated node
         adj.add(new ArrayList<>());
 
         assertTrue(solution.isCycle(V + 1, adj));
@@ -287,7 +284,6 @@ public class graphMethodsTest {
         adj.get(2).add(3);
         adj.get(3).add(0);
 
-        // Adding isolated nodes
         adj.add(new ArrayList<>());
         adj.add(new ArrayList<>());
 
@@ -307,7 +303,6 @@ public class graphMethodsTest {
         adj.get(2).add(3);
         adj.get(3).add(0);
 
-        // Adding an isolated node
         adj.add(new ArrayList<>());
 
         assertTrue(solution.isBipartite(V + 1, adj));
@@ -394,23 +389,6 @@ public class graphMethodsTest {
         assertFalse(solution.isBipartite(V, adj));
     }
 
-//    @Test
-//    public void testDijkstraWithGraphContainingNegativeWeight() {
-//        Solution1 solution = new Solution1();
-//        int V = 4;
-//        ArrayList<ArrayList<ArrayList<Integer>>> adj = new ArrayList<>();
-//        for (int i = 0; i < V; i++) {
-//            adj.add(new ArrayList<>());
-//        }
-//        adj.get(0).add(new ArrayList<>(Arrays.asList(1, 2)));
-//        adj.get(0).add(new ArrayList<>(Arrays.asList(2, -3)));
-//        adj.get(1).add(new ArrayList<>(Arrays.asList(3, 5)));
-//        adj.get(2).add(new ArrayList<>(Arrays.asList(3, 1)));
-//
-//        int[] result = solution.dijkstra(V, adj, 0);
-//        int[] expected = {0, 2, -1, 1};
-//        assertArrayEquals(expected, result);
-//    }
 
     @Test
     public void testBellmanFordWithGraphContainingNegativeCycle() {
@@ -443,7 +421,6 @@ public class graphMethodsTest {
         // Verify that the result is a valid MST
         assertEquals(3, result.size());  // The MST should have V-1 edges for V vertices
 
-        // You may want to further validate the specific edges in the MST
     }
 
     @Test
